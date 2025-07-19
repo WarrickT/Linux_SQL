@@ -1,0 +1,60 @@
+SELECT * 
+FROM login_attempts 
+WHERE login_date > '2022-05-09';
+
+SELECT * 
+FROM login_attempts 
+WHERE login_date >= '2022-05-09';
+
+SELECT * 
+FROM login_attempts 
+WHERE login_date BETWEEN '2022-05-09' AND '2022-05-11';
+
+
+SELECT * 
+FROM login_attempts 
+WHERE login_time < '07:00:00'
+
+SELECT * 
+FROM login_attempts 
+WHERE login_time BETWEEN '06:00:00' AND '07:00:00'
+
+SELECT event_id, username, login_date
+FROM log_in_attempts
+WHERE event_id >= 100
+
+SELECT event_id, username, login_date
+FROM log_in_attempts
+WHERE event_id BETWEEN 100 AND 150 
+
+SELECT * 
+FROM log_in_attempts 
+WHERE success = 1 AND login_time > '18:00' 
+
+
+SELECT * 
+FROM log_in_attempts
+WHERE login_date = '2022-05-08' OR login_date = '2022-05-09'
+
+SELECT * 
+FROM log_in_attempts 
+WHERE NOT country LIKE 'MEX%'
+
+SELECT * 
+FROM log_in_attempts 
+WHERE department = 'Marketing' AND office LIKE 'East%'
+
+
+SELECT * 
+FROM log_in_attempts 
+WHERE department = 'Finance' OR department = 'Sales'
+
+SELECT * 
+FROM log_in_attempts 
+WHERE NOT department = 'Information Technology' 
+
+INNER JOIN employees on machines.device_id = employees.device_id
+
+LEFT JOIN employees on machines.device_id = employees.device_id
+
+INNER JOIN employees on employees.username = log_in_attempts.username
